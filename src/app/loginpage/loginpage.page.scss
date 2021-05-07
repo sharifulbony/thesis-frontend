@@ -1,0 +1,30 @@
+.my-custom-class {
+  --background: #24ad3b;
+}
+
+// ion-card{
+//   transform: translateX(-53%) translateY(-50%);
+//     top: 50%;
+//     left: 50%;
+//     width: 80%;
+//     position: absolute;
+//     display: flex;
+
+// }
+
+ion-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 20mm;
+  width: 20mm;
+  max-width: 100%;
+  height: auto;
+}
+
+ion-col{
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

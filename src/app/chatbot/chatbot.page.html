@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Consultation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list *ngFor="let chat of chatArray; let i = index">
+    <ion-card *ngIf="chat.name=='me'" style="background-color: #c8e6c9; width: 50%; float: right;">
+      <ion-card-content>
+        {{chat.text}}
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="chat.name=='bot'" style="background-color: #b3e5fc; width: 50%; float: left;">
+      <ion-card-content>
+        {{chat.text}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  
+  <ion-row>
+    <ion-col size="10">
+      <ion-input [(ngModel)]="mytext.text" [ngModelOptions]="{standalone: true}"></ion-input>
+    </ion-col>
+    <ion-col size="2">
+      <ion-button  (click)="chat()">  <ion-icon name="send"></ion-icon> </ion-button>
+    </ion-col>
+  </ion-row>
+
+  
+</ion-footer>
+

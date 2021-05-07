@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>New Appointment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-card style="padding: 2mm;">
+      <form >
+       
+        <ion-row>
+          <ion-col size="4">
+            <ion-label>ID</ion-label>
+          </ion-col>
+          <ion-col size="8">
+            <!-- <ion-input [(ngModel)]="Appointment.id" [ngModelOptions]="{standalone: true}"></ion-input> -->
+            <b>{{Appointment.id}}</b>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="4">
+            <ion-label>Patient Name</ion-label>
+          </ion-col>
+          <ion-col size="8">
+            <!-- <ion-input [(ngModel)]="Appointment.name" [ngModelOptions]="{standalone: true}" placeholder={{Appointment.name}}></ion-input> -->
+            <b>{{Appointment.name}}</b>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Date</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-datetime value={{Appointment.date}} [(ngModel)]="Appointment.date" [ngModelOptions]="{standalone: true}"></ion-datetime>
+          </ion-col>
+      </ion-row>
+
+      <ion-label>Time</ion-label>
+      <ion-row>
+        <ion-col col-12>
+          <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" value={{Appointment.time}} [(ngModel)]="Appointment.time" [ngModelOptions]="{standalone: true}"></ion-datetime>
+        </ion-col>
+    </ion-row>
+
+      <ion-label>Hospital Name</ion-label>
+      <ion-row>
+        <ion-col col-12>
+          <ion-input [(ngModel)]="Appointment.hospital" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-col>
+      </ion-row>
+  
+        <ion-row>
+          <ion-col>
+            <ion-button  expand="full" (click)="createAppointment()">
+              Create Appointment
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+      </form>
+    </ion-card>
+  </ion-grid>
+
+</ion-content>
+

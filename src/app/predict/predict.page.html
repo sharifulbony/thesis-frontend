@@ -1,0 +1,227 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Prediction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-grid>
+      <form>
+        <ion-label>Rural/Urban</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.rural" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Rural</ion-select-option>
+              <ion-select-option value=2>Urban</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Age</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-input type="number" [(ngModel)]="predictData.age" [ngModelOptions]="{standalone: true}" placeholder="Type here.. ">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Marital Status</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.marital_status" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+
+              <ion-select-option value=4>Remarried</ion-select-option>
+              <ion-select-option value=5>Widow/Widower</ion-select-option>
+              <ion-select-option value=6>Divorced</ion-select-option>
+              <ion-select-option value=7>Separated</ion-select-option>
+              <ion-select-option value=8>Not stated</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Weight</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-input type="number" [(ngModel)]="predictData.wt" [ngModelOptions]="{standalone: true}" placeholder="Type here.. ">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Did an ANM/ Health worker visit you during the last three months?</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.anm_in_last_3_months" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Yes</ion-select-option>
+              <ion-select-option value=2>No</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Mother age when baby was born</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-input type="number" [(ngModel)]="predictData.mother_age_when_baby_was_born" [ngModelOptions]="{standalone: true}" placeholder="Type here.. ">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Whether having any form of disability as on Date of Survey?</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.disability_status" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Mental</ion-select-option>
+              <ion-select-option value=2>Visual</ion-select-option>
+              <ion-select-option value=3>Hearing</ion-select-option>
+              <ion-select-option value=4>Speech</ion-select-option>
+              <ion-select-option value=5>Locomotor</ion-select-option>
+              <ion-select-option value=6>Multiple</ion-select-option>
+              <ion-select-option value=7>Others</ion-select-option>
+              <ion-select-option value=0>No Disability</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+<!--        <ion-label>Mother age when baby was born</ion-label>-->
+<!--        <ion-row>-->
+<!--          <ion-col col-12>-->
+<!--            <ion-input type="number" [(ngModel)]="predictData.mother_age_when_baby_was_born" [ngModelOptions]="{standalone: true}" placeholder="Type here.. ">-->
+<!--            </ion-input>-->
+<!--          </ion-col>-->
+<!--        </ion-row>-->
+
+        <ion-label>When you became mother last time?
+        </ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.when_you_bcome_mother_last_time" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Then</ion-select-option>
+              <ion-select-option value=2>Later-Within2 Years</ion-select-option>
+              <ion-select-option value=3>Later-2 Years  or more</ion-select-option>
+              <ion-select-option value=4>Did not want any children</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Chew</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.chew" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Pan with tobacco</ion-select-option>
+              <ion-select-option value=2>Pan without tobacco</ion-select-option>
+              <ion-select-option value=3>Gutka/Pan with tobacco</ion-select-option>
+              <ion-select-option value=4>Gutka/Pan without tobacco</ion-select-option>
+              <ion-select-option value=5>Tobacco only</ion-select-option>
+              <ion-select-option value=6>Ex–Chewer</ion-select-option>
+              <ion-select-option value=7>Never chewed</ion-select-option>
+              <ion-select-option value=0>Not known</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Has Diagnosed for</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.diagnosed_for" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Diabetes</ion-select-option>
+              <ion-select-option value=2>Hypertension</ion-select-option>
+              <ion-select-option value=3>Chronic heart disease/failure</ion-select-option>
+              <ion-select-option value=4>Myocardial infarction/heart attack</ion-select-option>
+              <ion-select-option value=5>Stroke/Cerebrovascular accident</ion-select-option>
+              <ion-select-option value=6>Epilepsy</ion-select-option>
+              <ion-select-option value=7>Asthma/chronic respiratory failure</ion-select-option>
+              <ion-select-option value=8>Goitre/ Thyroid disorder</ion-select-option>
+              <ion-select-option value=9>Tuberculosis</ion-select-option>
+              <ion-select-option value=10>Leprosy</ion-select-option>
+              <ion-select-option value=11>Cancer-Respiratory system</ion-select-option>
+              <ion-select-option value=12>Cancer-Gastro-intestinal system</ion-select-option>
+              <ion-select-option value=13>Cancer-Genitourinary system</ion-select-option>
+              <ion-select-option value=14>Cancer-Breast</ion-select-option>
+              <ion-select-option value=15>Renal stone</ion-select-option>
+              <ion-select-option value=16>Chronic renal failure</ion-select-option>
+              <ion-select-option value=17>Gall stone /cholecystitis</ion-select-option>
+              <ion-select-option value=18>Chronic  liver failure</ion-select-option>
+              <ion-select-option value=19>Rheumatoid arthritis/osteoarthritis</ion-select-option>
+              <ion-select-option value=20>Chronic  skin  diseases –psoriasis</ion-select-option>
+              <ion-select-option value=21>Others (Hernia hydrocele peptic ulcer etc)</ion-select-option>
+              <ion-select-option value=0>Not diagnosed</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Smoke</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.smoke" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Usual smoker</ion-select-option>
+              <ion-select-option value=2>Occasional smoker</ion-select-option>
+              <ion-select-option value=3>Ex – Smoker</ion-select-option>
+              <ion-select-option value=4>Never smoked</ion-select-option>
+              <ion-select-option value=0>Not known</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Type of toilet facility mainly used</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.toilet_used" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Flush/Pour flush latrine connected:-To piped sewer system</ion-select-option>
+              <ion-select-option value=2>To septic tank</ion-select-option>
+              <ion-select-option value=3>To pit latrine</ion-select-option>
+              <ion-select-option value=4>To somewhere else</ion-select-option>
+              <ion-select-option value=0>open defecation(field
+                brush
+               jungle etc.)</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Is your husband living with you?</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.is_husband_living_with_you" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Yes</ion-select-option>
+              <ion-select-option value=2>No</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Highest educational qualification attained </ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.highest_qualification" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Literate Without formal education</ion-select-option>
+              <ion-select-option value=2>Below primary</ion-select-option>
+              <ion-select-option value=3>Primary</ion-select-option>
+              <ion-select-option value=4>Middle</ion-select-option>
+              <ion-select-option value=0>Illiterate</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Occupation </ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-select class="custom-options" type="number"  [(ngModel)]="predictData.occupation_status" [ngModelOptions]="{standalone: true}" placeholder="Select one.. ">
+              <ion-select-option value=1>Cultivator</ion-select-option>
+              <ion-select-option value=2>Agricultural Wage labourer</ion-select-option>
+              <ion-select-option value=3>Non- Agricultural Wage labourer</ion-select-option>
+              <ion-select-option value=4>Self-Employed</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+        
+
+
+        <ion-button expand="block" (click)="predict()">
+         Predict
+        </ion-button>
+
+      </form>
+    </ion-grid>
+  </ion-card>
+</ion-content>

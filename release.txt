@@ -1,0 +1,10 @@
+change ApiService url
+change version number
+1. ionic cordova build android --prod --release
+2. copy the apk to the root directory 
+3. For the first time
+ "C:\Program Files\Java\jdk1.8.0_261\bin\keytool" -genkey -v -keystore epass-release-key.keystore -alias chatbot -keyalg RSA -keysize 2048 -validity 10000
+or, 
+"C:\Program Files\Java\jdk1.8.0_261\bin\keytool" -importkeystore -srckeystore epass-release-key.keystore -destkeystore epass-release-key.keystore -deststoretype pkcs12
+4. "C:\Program Files\Java\jdk1.8.0_261\bin\jarsigner" -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore epass-release-key.keystore app-release-unsigned.apk chatbot
+5. "C:\Users\KHAH\AppData\Local\Android\Sdk\build-tools\30.0.2\zipalign" -v 4 app-release-unsigned.apk chatbot.apk

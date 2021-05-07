@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-grid>
+      <form>
+        <ion-label>Full Name</ion-label>    
+        <ion-row>                  
+          <ion-col col-12>
+            <ion-input type="text" [(ngModel)]="patient.name" [ngModelOptions]="{standalone: true}" placeholder="Type name ">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>Phone</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-input type="number" [(ngModel)]="patient.phone" [ngModelOptions]="{standalone: true}" placeholder="Type phone no ">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+        <ion-label>NID</ion-label>
+        <ion-row>
+          <ion-col col-12>
+            <ion-input type="number" [(ngModel)]="patient.id" [ngModelOptions]="{standalone: true}" placeholder="Type NID ">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-button expand="block" (click)='register()'>
+          Register
+        </ion-button>
+      </form>
+    </ion-grid>
+  </ion-card>
+</ion-content>

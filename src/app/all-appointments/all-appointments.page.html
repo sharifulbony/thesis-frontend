@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>All Appointments</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align: center;">
+  <!-- <h3>Appointments</h3> -->
+  <!-- <ion-refresher slot="fixed" disabled="false" (ionRefresh)="doRefresh($event)" pullFactor="0.5" pullMin="100" pullMax="200">
+    <ion-refresher-content  
+     pullingIcon="arrow-down"  
+     pullingText="Pull to refresh"  
+     refreshingSpinner="bubbles"  
+     refreshingText="Refreshing....."></ion-refresher-content>  
+    </ion-refresher> -->
+<!-- <ion-card class="blink_me" style="padding: 2mm; text-align: center;">Total: {{resultLength}}</ion-card> -->
+  <ion-list *ngFor="let appointment of appointments; let i = index">
+    <ion-card *ngIf="appointment.code==2" style="text-align: center; font-size: 30; color: lightcoral;">No data Found!</ion-card>
+    <ion-card *ngIf="appointment.code!=2" style="background-color: #b3e5fc;">
+      <ion-card-header>
+        <!-- <ion-card-subtitle>Appointment Id <b>{{appointment.index}}</b></ion-card-subtitle> -->
+        <ion-card-title>Patient Name: <b>{{appointment.name}}</b>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content style="font-size:16px">
+        Appointment Date <b>{{appointment.date}}</b><br>
+        Time <b>{{appointment.time}}</b><br>
+        Hospital Name <b>{{appointment.hospital}}</b><br>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
+
+
+
+<!-- 5360329212 -->

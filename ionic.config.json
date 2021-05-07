@@ -1,0 +1,10 @@
+{
+  "name": "epass",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}
